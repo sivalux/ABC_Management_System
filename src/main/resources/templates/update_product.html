@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ABC Management System</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Update Product</h1>
+		<a th:href="@{/}" > Back to Product List</a>
+		<form action="/" th:action="@{/saveProduct}" th:object = "${product}" method="POST"> 
+			<input type="hidden" th:field="*{id}"/>
+			<div class="form-group">
+				<label for="name"><strong>Name:</strong></label>
+				<input type="text" id="name" th:field="*{name}" name="name" placeholder="Product Name" class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+			</div>
+			<div class="form-group">
+				<label for="price"><strong>Price:</strong> </label>
+				<input type="text" id="price" th:field="*{price}" name="price" placeholder="Price" class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+			</div>
+			<div class="form-group">
+				<label for="promotion"><strong>Promotion(%): </strong></label>
+				<input type="text" id="promotion" th:field="*{promotion}" name="promotion" placeholder="Promotion" class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('promotion')}" th:errors="*{promotion}"></p>
+			</div>
+			<div class="form-group">
+				<label for="expiredDate"><strong>Expired Date:</strong> </label>
+				<input type="text" id="expiredDate" th:field="*{expiredDate}" name="expiredDate" placeholder="Enter the Expired Date" class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('expiredDate')}" th:errors="*{expiredDate}"></p>
+			</div>
+			<div class="form-group">
+				<label for="tax"><strong>Tax(%): </strong></label>
+				<input type="text" id="tax" th:field="*{tax}" name="tax" placeholder="Enter the tax " class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('tax')}" th:errors="*{tax}"></p>
+			</div>
+			<div class="form-group">
+				<label for="quantity"><strong>Quantity:</strong> </label>
+				<input type="number" id="quantity" th:field="*{quantity}" name="quantity" placeholder="Enter the Quantity " class="form-control mb-4 col-4">
+				<p th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+			</div>
+			
+			<button type="submit" class="btn btn-info col-2">Update Product</button>
+		</form>
+			
+			
+			
+		
+		
+	</div>
+</body>
+</html>
