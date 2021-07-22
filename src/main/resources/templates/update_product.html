@@ -28,7 +28,7 @@
 				<p th:if="${#fields.hasErrors('promotion')}" th:errors="*{promotion}"></p>
 			</div>
 			<div class="form-group">
-				<label for="expiredDate"><strong>Expired Date:</strong> </label>
+				<label for="expiredDate"><strong>Expired Date(dd/mm/yyyy):</strong> </label>
 				<input type="text" id="expiredDate" th:field="*{expiredDate}" name="expiredDate" placeholder="Enter the Expired Date" class="form-control mb-4 col-4">
 				<p th:if="${#fields.hasErrors('expiredDate')}" th:errors="*{expiredDate}"></p>
 			</div>
